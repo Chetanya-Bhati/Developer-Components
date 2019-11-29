@@ -1,0 +1,44 @@
+<apex:page sidebar="False" showHeader="False">
+    <Apex:PageBlock title="Employee Information">
+        <Apex:pageBlockSection >      
+        <table style="width:120%;">
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Age</th>
+            <th>Photo</th>
+          </tr> 
+          <tr>
+            <td>Chetanya</td>
+            <td>Bhati</td> 
+            <td>49</td>
+            <td><apex:image url="{!$Resource.ChetanyaPhoto}" width="45" height="50"/></td>
+          </tr> 
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td> 
+            <td>50</td>
+            <td><img src="https://i.pinimg.com/736x/35/63/cc/3563ccf3fb0ee7de471f33394b6e6d95--daisy-flowers-pretty-flowers.jpg?b=t" style="width:45px;height:50px;" alt="White Flower"/></td>
+          </tr> 
+          <tr>
+            <td>Eve</td>
+            <td>Jackson</td> 
+            <td>94</td>
+            <td><img src="pic_trulli.jpg" alt="Eve Jackson"/></td>
+          </tr> 
+      </table>
+          <apex:pageBlock > 
+          <picture>
+              <h2 style="color:Blue;font-size:200%">Picture Image-Dahlia Flower</h2>  <Br/> 
+              <source media="(min-width: 100px)" srcset="https://flower-wallpaper.org/wp-content/uploads/2016/11/dahlia-flowers-wallpaper9.jpg" style="width:42px;height:42px;"/>
+              <img src="https://c.ap5.visual.force.com/resource/1564640958000/ChetanyaPhoto.jpg" alt="Flowers" style="width:500px;height:400px;"/>
+          </picture>
+          </apex:pageBlock> 
+          </Apex:pageBlockSection>
+      
+      <!-- <apex:image url="{!$Resource.ChetanyaPhoto}" width="45" height="50"/> --> 
+      <Br/> 
+      <body style="background-image:url('https://i.pinimg.com/736x/35/63/cc/3563ccf3fb0ee7de471f33394b6e6d95--daisy-flowers-pretty-flowers.jpg?b=t');width:auto;">
+      </body>
+      </Apex:PageBlock>
+</apex:page>

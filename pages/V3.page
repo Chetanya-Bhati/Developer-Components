@@ -1,0 +1,5 @@
+<apex:page controller="C3">
+    {!c.firstname} <br/>
+    {!c.lastname} <br/>
+
+</apex:page>

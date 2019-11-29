@@ -1,0 +1,47 @@
+<apex:page controller="c12" tabStyle="Account" sidebar="true"> 
+<apex:form style="overflow-y:auto;overflow-x:auto; margin-right: 5px;margin-left: 5px;margin-top: 3px;">
+    <apex:pageBlock title="Accounts with search Options " >
+    <apex:pageBlockButtons >
+        <span style="margin-left:100px"> </span>
+        <apex:commandButton value="<<" action="{!FirstPage}" disabled="{!prev}" title="First Page"/> <!--  -->
+        <apex:commandButton value="<" action="{!previous}" disabled="{!prev}" title="Previous"/>  
+        <apex:commandButton value=">" action="{!next}" disabled="{!nxt}" title="Next"/> <!-- rerender="details"/> -->
+        <apex:commandButton value=">>" action="{!LastPage}" disabled="{!nxt}" title="Last Page"/> <span style="margin-right:250px"> </span>
+        <!--<apex:outputText >{!OffsetSize + 1-LimitSize}-{!IF((Offsetsize * Limitsize)>Totalrecs, Totalrecs,
+                     (Offsetsize * Limitsize))} of {!Totalrecs}
+                </apex:outputText> -->
+        <apex:commandButton value="Save Edited A/Cs" action="{!save}"/>
+    </apex:pageBlockButtons>
+     
+        <!--<apex:outputtext value="{!totalrecs}" >
+        </apex:outputText> -->
+        <apex:inputText id="input1" size="10" title="Search >1 Char" value="{!keyword1}"/>
+        <apex:commandButton value="Search ALL" action="{!search_all}"/> &nbsp;&nbsp;
+        <apex:inputText id="input2" size="10" title="Search >1 Char" value="{!keyword2}"/> 
+        <apex:commandButton value="Search A/C Name" action="{!search_Name}"/> <span style="margin-right:260px"> </span> 
+        <apex:inputText id="input3" size="15" title="Search last 4 Digit" value="{!keyword3}"/> 
+        <apex:commandButton value="Search Phone or Fax" action="{!search_Phone}"/>
+    <apex:pageBlockTable value="{!results}" var="r"> 
+        <apex:column value="{!r.name}"/>
+        <apex:column headerValue="Type">
+            <apex:inputField value="{!r.type}"/>
+        </apex:column>
+        <!--<apex:column value="{!r.type}"/> -->
+        <apex:column value="{!r.industry}"/>
+        <!--<apex:column headerValue="Phone">
+        <apex:inputText value="{!r.Phone}"/>
+        </apex:column> -->
+        
+        <!--<apex:column value="{!r.phone}"/> -->
+        <apex:column headerValue="Phone(INLINE EDIT)" >
+            <apex:outputField value="{!r.Phone}" >
+                <apex:inlineEditSupport />
+            </apex:outputField>
+        </apex:column>
+        
+        <apex:column value="{!r.fax}"/>
+        <!-- <apex:inlineEditSupport /> -->
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

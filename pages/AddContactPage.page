@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" Extensions="AddContactForAccount">
+    <apex:form >
+        <apex:pageBlock title="Add Contact for Account --> {!Contact.Account.Name}" mode="edit">
+            <!-- <Apex:param name="AccountId" value="{!AccountId}"/> -->
+            <apex:pageBlockButtons >
+                <!--<apex:param name="AccountId" value="{!AccountId}"/> -->
+                <apex:commandButton action="{!QuickSave}" value="Save"/>
+                <!-- <apex:param name="AccountId" value="0017F00000ZBHJR"/> -->
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Enter Values for the Contact"  columns="1">
+                <apex:inputField value="{!Contact.FirstName}"/> 
+                <apex:inputField value="{!Contact.LastName}"/> 
+                <apex:inputField value="{!Contact.Phone}"/>
+                <apex:inputField value="{!Contact.AccountId}"/> 
+                <!-- <apex:inputField value="{!Contact.Account.Name}"/> -->
+                <!--<apex:OutputField value="{!Contact.Id}"/>-->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

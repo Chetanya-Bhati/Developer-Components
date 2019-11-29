@@ -1,0 +1,21 @@
+<apex:page standardController="Account" recordSetVar="accounts" tabstyle="account" sidebar="false" showHeader="false">
+<apex:form >
+  <apex:pageBlock title="LIST OF ALL ACCOUNT">
+  
+  <apex:pageblockButtons >  
+    <apex:commandButton value="First" action="{!First}"/>
+    <apex:commandButton value="Last" action="{!Last}"/>
+    <apex:commandButton value="Previous" action="{!Previous}"/>
+    <apex:commandButton value="Next" action="{!Next}"/>
+  </apex:pageblockButtons>
+    <apex:pageBlockTable value="{!accounts}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.type}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.fax}"/>
+    </apex:pageBlockTable>
+    
+  </apex:pageBlock>
+</apex:form>
+</apex:page>

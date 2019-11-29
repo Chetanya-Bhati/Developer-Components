@@ -1,0 +1,23 @@
+<apex:page standardController="Account" Extensions="AccountDetailWithContacts">
+    <apex:form >
+        <apex:pageblock >
+            <!-- <Apex:param name="AccountId" value="{!AccountId}"/> -->
+            <!-- <Apex:param name="AccountId" value="0017F00000ZBHJR"/> -->
+        <apex:detail subject="{!Account.Id}" inlineEdit="false" relatedlist="False" />
+        
+        </apex:pageblock>
+        
+        <apex:pageBlock title="List of all Contact Related with Account">
+            <apex:pageBlockButtons location="Top" > 
+                <apex:commandButton value="Add Contacts"  title="Add Contacts" action="{!AddContact}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Cons}" var="c">
+            <apex:column value="{!c.FirstName}"/>
+            <apex:column value="{!c.LastName}"/>
+            <apex:column value="{!c.AccountId}"/>
+            <apex:column value="{!c.phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+          
+    </apex:form>
+</apex:page>

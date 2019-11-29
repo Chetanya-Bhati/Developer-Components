@@ -1,0 +1,7 @@
+<apex:page controller = 'Class1'>
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations Hello</h1>
+This is your new Page- Hello Page Created.
+{!Class1.Method1()}
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

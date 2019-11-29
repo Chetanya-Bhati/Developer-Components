@@ -1,0 +1,24 @@
+<apex:page controller="c6">
+<apex:form >
+    <apex:pageBlock title="Display of Account with Search">
+    
+    <apex:inputText value="{!keyword}"/>
+    <apex:commandButton value="Search" action="{!serach_now}"/>
+    <apex:pageBlockTable value="{!results}" var="r">
+        <apex:column value="{!r.name}"/>
+        <apex:column value="{!r.type}"/>
+        <apex:column value="{!r.industry}"/>
+        <apex:column value="{!r.phone}"/>
+        <apex:column value="{!r.fax}"/>
+    </apex:pageBlockTable>
+   <!-- <apex:pageBlockTable value="{!acts}" var="a">
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.type}"/>test
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.phone}"/>
+            <apex:column value="{!a.fax}"/>   
+    </apex:pageBlockTable> -->
+
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

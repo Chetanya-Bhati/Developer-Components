@@ -1,0 +1,34 @@
+<apex:page controller="c7">
+<apex:form >
+    <apex:pageBlock title="Account Display with search Criteria" >
+        <apex:inputText value="{!keyword}"/>
+        <apex:commandButton value="Search" action="{!serach_now}"/>
+    <apex:pageBlockTable value="{!results}" var="r">
+        <apex:column value="{!r.name}"/>
+        <apex:column headerValue="Type(INPUT FIELD)" >
+        <apex:InputField value="{!r.type}">
+            </apex:InputField>
+        </apex:column>
+        
+       <!-- <apex:column value="{!r.type}"/> -->
+        <apex:column value="{!r.industry}"/>
+        <!--<apex:column headerValue="Phone">
+        <apex:inputText value="{!r.Phone}"/>
+        </apex:column> -->
+        
+        <!--<apex:column value="{!r.phone}"/> -->
+        <apex:column headerValue="Phone(INLINE EDIT)" >
+            <apex:outputField value="{!r.Phone}">
+                <apex:inlineEditSupport />
+            </apex:outputField>
+        </apex:column>
+        
+        <apex:column value="{!r.fax}"/>
+        <!-- <apex:inlineEditSupport /> -->
+    </apex:pageBlockTable>
+    <apex:pageBlockButtons >
+        <apex:commandButton value="Save Edited Records" action="{!save}"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

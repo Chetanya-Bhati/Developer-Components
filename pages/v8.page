@@ -1,0 +1,33 @@
+<apex:page controller="c9" tabStyle="Account" sidebar="true">
+<apex:form >
+    <apex:pageBlock title="Accounts with search Options " >
+        <apex:inputText id="input1" size="10" value="{!keyword1}"/>
+        <apex:commandButton value="Search ALL" action="{!search_all}"/> &nbsp;&nbsp;
+        <apex:inputText id="input2" size="10" value="{!keyword2}"/> 
+        <apex:commandButton value="Search A/C Name" action="{!search_Name}"/> <span style="margin-right:300px"> </span> 
+        <apex:inputText id="input3" size="15" value="{!keyword3}"/> 
+        <apex:commandButton value="Search Phone No." action="{!search_Phone}"/>
+    <apex:pageBlockTable value="{!results}" var="r">
+        <apex:column value="{!r.name}"/>
+        <apex:column value="{!r.type}"/>
+        <apex:column value="{!r.industry}"/>
+        <!--<apex:column headerValue="Phone">
+        <apex:inputText value="{!r.Phone}"/>
+        </apex:column> -->
+        
+        <!--<apex:column value="{!r.phone}"/> -->
+        <apex:column headerValue="Phone(INLINE EDIT)" >
+            <apex:outputField value="{!r.Phone}" >
+                <apex:inlineEditSupport />
+            </apex:outputField>
+        </apex:column>
+        
+        <apex:column value="{!r.fax}"/>
+        <!-- <apex:inlineEditSupport /> -->
+    </apex:pageBlockTable>
+    <apex:pageBlockButtons >
+        <apex:commandButton value="Save Inline Edited Record" action="{!save}"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

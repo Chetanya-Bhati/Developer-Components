@@ -1,0 +1,13 @@
+<apex:page controller="c1">
+  <Apex:form >
+  {!method1}
+  </Apex:form>
+  <html>
+        <head>
+            <title>Test</title>
+        </head>
+        <body>
+            <p>This is a test.</p>
+        </body>
+    </html>
+</apex:page>

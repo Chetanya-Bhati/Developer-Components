@@ -1,0 +1,14 @@
+<apex:page controller="c4" tabstyle="account" sidebar="false" showHeader="false">
+<apex:form >    
+    
+    <apex:pageBlock title="List of all Accounts">
+    <apex:pageBlockTable value="{!acts}" var="a">
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.type}"/>
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.phone}"/>
+            <apex:column value="{!a.fax}"/>   
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>
